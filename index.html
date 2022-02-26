@@ -6,10 +6,10 @@
                 border: 1px solid black;
                 color: black;
                 border-radius: 10px;
-                width: 800px;
-                height: 100px;
+                width: 287px;
+                height: 40px;
                 background-color: rgb(180, 229, 248);
-                font-size: 80px;
+                font-size: 35px;
                 overflow: hidden;
                 margin: 10px;
                 margin-top: 10px;
@@ -20,20 +20,18 @@
             .elementkeyword{
                 display: grid;
                 grid-template-columns: auto auto auto auto;
-                width: 800px;
-                
-                
+                  
             }
             button{
-                margin: 8px;
-                font-size: 60px;
-                margin-bottom: 25px;
+                margin: 5px;
+                font-size: 35px;
+                margin-bottom: 5px;
 
             }
             .elementnumber2{
                 display: grid;
-                width: 800px;
                 grid-template-columns: auto auto auto auto;
+               
             }
             .calc{
                 color: black;
@@ -45,8 +43,9 @@
             }
             section{
                 background-color: lightslategrey;
-                width: 822px;
+                width: 313px;
                 border-radius: 8px;
+                margin-left: 30%;
             }
             .space{
                 height: 10px;
@@ -56,222 +55,64 @@
     </head>
     <body>
         
-<!-- <input id="suminput1"  required type="number" placeholder="Inter number here.">
-<input id="suminput2" required type="number" placeholder="Inter number here.">
-<button onclick="sumactive()">Sum</button>
-<div id="sumoutput">Sum shows here</div>
-    
-<input id="multiplicationinput1"  required type="number" placeholder="Inter number here.">
-<input id="multiplicationinput2" required type="number" placeholder="Inter number here.">
-<button onclick="multiplicationactive()">multiplication</button>
-<div id="multiplicationoutput">multiplication shows here</div>
-
-<input id="substractioninput1"  required type="number" placeholder="Inter number here.">
-<input id="substractioninput2" required type="number" placeholder="Inter number here.">
-<button onclick="substractionactive()">substraction</button>
-<div id="substractionoutput">substraction shows here</div>
-
-<input id="divideinput1"  required type="number" placeholder="Inter number here.">
-<input id="divideinput2" required type="number" placeholder="Inter number here.">
-<button onclick="divideactive()">divide</button>
-<div id="divideoutput">divide shows here</div><br> -->
 <section>
     <div class="space"></div>
 <div id="screen"></div>
 <div class="elementkeyword">
-<button id="one" onclick="oneactive()">1</button>
-<button id="two" onclick="twoactive()" >2</button >
-<button id="three" onclick="threeactive()" >3</button>
-<button id="plus" onclick="plusactive()" >+</button>
-<button id="four" onclick="fouractive()" >4</button>
-<button id="five" onclick="fiveactive()" >5</button>
-<button  id="six" onclick="sixactive()">6</button>
-<button id="minus" onclick="minusactive()" >-</button>
-<button id="seven" onclick="sevenactive()" >7</button >
-<button id="eight" onclick="eightactive()" >8</button>
-<button id="nine" onclick="nineactive()" >9</button>
-
-<button id="multiply" onclick="multiplyactive()" >*</button>
-<button id="zero" onclick="zeroactive()" >0</button>
-<button id="dot" onclick="dotactive()" >.</button>
-
-<button id="divide" onclick="divideactive()" >/</button>
-
-<button id="clear" onclick="clearactive()" >AC</button>
-
-
+<button id="one" onclick="active(1)">1</button>
+<button id="two" onclick="active(2)" >2</button >
+<button id="three" onclick="active(3)" >3</button>
+<button id="plus" onclick="active('+')">+</button>
+<button id="four" onclick="active(4)" >4</button>
+<button id="five" onclick="active(5)" >5</button>
+<button  id="six" onclick="active(6)">6</button>
+<button id="minus" onclick="active('-')" >-</button>
+<button id="seven" onclick="active(7)" >7</button >
+<button id="eight" onclick="active(8)" >8</button>
+<button id="nine" onclick="active(9)" >9</button>
+<button id="multiply" onclick="active('*')" >*</button>
+<button id="zero" onclick="active(0)" >0</button>
+<button id="dot" onclick="active('.')" >.</button>
+<button id="divide" onclick="active('/')" >/</button>
+<button id="clear" onclick="clearactive()">AC</button>
 </div>
+
 <div class="elementnumber2">
-<button id="result" onclick="resultactive()" >=</button>
-<button>ON</button>
-<button>OFF</button>
-<button>Shift</button>
+    <button onclick="deleteactive()" >Delete</button>
+    <button id="result" onclick="resultactive()" >=</button>
 </div>
+
 <div class="calc">Calc by KrishnaPatel</div>
+
 </section> 
 </body>
     <script>
         
 
-//   function sumactive() {
-// const suminput1element = document.getElementById("suminput1");
-// const suminput2element = document.getElementById("suminput2");
-// const suminput1value=suminput1element.value;
-// const suminput2value=suminput2element.value;
-// const outputelement =document.getElementById("sumoutput");
-// const sum=parseFloat(suminput1value)+parseFloat(suminput2value);
-// outputelement.textContent=sum;
-// }
-
-// function multiplicationactive() {
-// const multiplicationinput1element = document.getElementById("multiplicationinput1");
-// const multiplicationinput2element = document.getElementById("multiplicationinput2");
-// const multiplicationinput1value=multiplicationinput1element.value;
-// const multiplicationinput2value=multiplicationinput2element.value;
-// const outputelement =document.getElementById("multiplicationoutput");
-// const multiplication=parseFloat(multiplicationinput1value)*parseFloat(multiplicationinput2value);
-// outputelement.textContent=multiplication;
-// }
-// function substractionactive() {
-// const substractioninput1element = document.getElementById("substractioninput1");
-// const substractioninput2element = document.getElementById("substractioninput2");
-// const substractioninput1value=substractioninput1element.value;
-// const substractioninput2value=substractioninput2element.value;
-// const outputelement =document.getElementById("substractionoutput");
-// const substraction=parseFloat(substractioninput1value)-parseFloat(substractioninput2value);
-// outputelement.textContent=substraction;
-// }
-// function divideactive() {
-// const divideinput1element = document.getElementById("divideinput1");
-// const divideinput2element = document.getElementById("divideinput2");
-// const divideinput1value=divideinput1element.value;
-// const divideinput2value=divideinput2element.value;
-// const outputelement =document.getElementById("divideoutput");
-// const divide=parseFloat(divideinput1value)/parseFloat(divideinput2value);
-// outputelement.textContent=divide;
-// }
-let number=0;
+let number="";
+let screenelement=document.getElementById("screen")
         
-function oneactive(){
-    const oneactiveelement=document.getElementById("one");
-   const oneactiveelementvalue= oneactiveelement.textContent;
+function active(key){
+   screenelement.innerHTML+=key;
+}
 
-   number=oneactiveelementvalue;
-   const screenelement=document.getElementById("screen");
-   screenelement.innerHTML+=number;
-}
-function twoactive(){
-    const twoactiveelement=document.getElementById("two");
-   const twoactiveelementvalue= twoactiveelement.textContent;
-   number=twoactiveelementvalue;
-   const screenelement=document.getElementById("screen");
-   screenelement.innerHTML+=number;
-}
-function threeactive(){
-    const threeactiveelement=document.getElementById("three");
-   const threeactiveelementvalue= threeactiveelement.textContent;
-   number=threeactiveelementvalue;
-   const screenelement=document.getElementById("screen");
-   screenelement.innerHTML+=number;
-}
-function fouractive(){
-    const fouractiveelement=document.getElementById("four");
-   const fouractiveelementvalue= fouractiveelement.textContent;
-   number=fouractiveelementvalue;
-   const screenelement=document.getElementById("screen");
-   screenelement.innerHTML+=number;
-}
-function fiveactive(){
-    const fiveactiveelement=document.getElementById("five");
-   const fiveactiveelementvalue= fiveactiveelement.textContent;
-   number=fiveactiveelementvalue;
-   const screenelement=document.getElementById("screen");
-   screenelement.innerHTML+=number;
-}
-function sixactive(){
-    const sixactiveelement=document.getElementById("six");
-   const sixactiveelementvalue= sixactiveelement.textContent;
-   number=sixactiveelementvalue;
-   const screenelement=document.getElementById("screen");
-   screenelement.innerHTML+=number;
-}
-function sevenactive(){
-    const sevenactiveelement=document.getElementById("seven");
-   const sevenactiveelementvalue= sevenactiveelement.textContent;
-   number=sevenactiveelementvalue;
-   const screenelement=document.getElementById("screen");
-   screenelement.innerHTML+=number;
-}
-function eightactive(){
-    const eightactiveelement=document.getElementById("eight");
-   const eightactiveelementvalue= eightactiveelement.textContent;
-   number=eightactiveelementvalue;
-   const screenelement=document.getElementById("screen");
-   screenelement.innerHTML+=number;
-}
-function nineactive(){
-    const nineactiveelement=document.getElementById("nine");
-   const nineactiveelementvalue= nineactiveelement.textContent;
-   number=nineactiveelementvalue;
-   const screenelement=document.getElementById("screen");
-   screenelement.innerHTML+=number;
-}
-function zeroactive(){
-    const zeroactiveelement=document.getElementById("zero");
-   const zeroactiveelementvalue= zeroactiveelement.textContent;
-   number=zeroactiveelementvalue;
-   const screenelement=document.getElementById("screen");
-   screenelement.innerHTML+=number;
-}
-function dotactive(){
-    const dotactiveelement=document.getElementById("dot");
-   const dotactiveelementvalue= dotactiveelement.textContent;
-   number=dotactiveelementvalue;
-   const screenelement=document.getElementById("screen");
-   screenelement.innerHTML+=number;
-}
-function plusactive(){
-
-    const plusactiveelement=document.getElementById("plus");
-   const plusactiveelementvalue= plusactiveelement.textContent;
-   number=plusactiveelementvalue;
-   const screenelement=document.getElementById("screen");
-   screenelement.innerHTML+=number;
-}
-function minusactive(){
-    const minusactiveelement=document.getElementById("minus");
-   const minusactiveelementvalue= minusactiveelement.textContent;
-   number=minusactiveelementvalue;
-   const screenelement=document.getElementById("screen");
-   screenelement.innerHTML+=number;
-}
-function multiplyactive(){
-    const multiplyactiveelement=document.getElementById("multiply");
-   const multiplyactiveelementvalue= multiplyactiveelement.textContent;
-   number=multiplyactiveelementvalue;
-   const screenelement=document.getElementById("screen");
-   screenelement.innerHTML+=number;
-}
-function divideactive(){
-    const divideactiveelement=document.getElementById("divide");
-   const divideactiveelementvalue= divideactiveelement.textContent;
-   number=divideactiveelementvalue;
-   const screenelement=document.getElementById("screen");
-   screenelement.innerHTML+=number;
-}
 function clearactive(){
-//     const clearactiveelement=document.getElementById("clear");
-//    const clearactiveelementvalue= clearactiveelement.textContent;
-//    number=clearactiveelementvalue;
-   const screenelement=document.getElementById("screen");
-   screenelement.textContent="";
+   screenelement.innerHTML="";
 }
 function resultactive(){
-   const screenelement=document.getElementById("screen");
-   const resultdata=screenelement.textContent;
+   const resultdata=screenelement.innerHTML
+//    document.write(resultdata)
    let final=eval(resultdata);
-   screenelement.textContent=final;
+   screenelement.innerHTML=final;
 }
+
+function deleteactive(){
+number=screenelement.innerHTML
+ const newNumber=number.slice(0,-1)
+screenelement.innerHTML=newNumber;
+}
+
+
 
 
 
